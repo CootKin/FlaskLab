@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ ad.header }}
+{% endblock %}
+
+
+{% block body %}
+<div class="container mt-5">
+  <h1>Объявление</h1>
+    <div class="alert alert-info">
+      <h2>{{ ad.header }}</h2>
+      <p>{{ ad.description }}</p>
+      <br>
+      <p><b>Дата создания: {{ ad.creation_date }}</b></p>
+      <p><em>Владелец: {{ ad.owner }}</em></p>
+      <br>
+      <a href="/ads/{{ ad.id }}/update" class="btn btn-warning">Редактировать</a>
+      <a href="/ads/{{ ad.id }}/delete" class="btn btn-danger">Удалить</a>
+    </div>
+</div>
+{% endblock %}
